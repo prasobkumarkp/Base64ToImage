@@ -26,12 +26,12 @@ namespace Base64ToImage
 
 		private void btnClearImage_Click(object sender, EventArgs e)
 		{
-
+			pbOut.Image = null;
 		}
 
 		private void btnClearText_Click(object sender, EventArgs e)
 		{
-
+			txtInput.Clear();
 		}
 
 		private void txtInput_Changed(object sender, EventArgs e)
@@ -41,22 +41,22 @@ namespace Base64ToImage
 
 		private void ValidateControls()
 		{
-			//if (!string.IsNullOrEmpty(txtInput.Text))
-			//{
-			//	btnConvertBase64ToImage.Enabled = true;
-			//}
-			//else
-			//{
-			//	btnConvertBase64ToImage.Enabled = false;
-			//}
+			if (string.IsNullOrEmpty(txtInput.Text))
+			{
+				btnConvertBase64ToImage.Enabled = false;
+			}
+			else
+			{
+				btnConvertBase64ToImage.Enabled = true;
+			}
 
-			//if (!string.IsNullOrEmpty(txtFileUrl.Text))
-			//{
-			//	btnConvertBase64ToImage.Enabled = false;
-			//}
-			//else {
-			//	btnConvertBase64ToImage.Enabled = true;
-			//}
+			if (string.IsNullOrEmpty(txtFileUrl.Text))
+			{
+				btnConvertImageToBase64.Enabled = false;
+			}
+			else {
+				btnConvertImageToBase64.Enabled = true;
+			}
 		}
 
 		private void ValidatePbOut()
@@ -152,6 +152,11 @@ namespace Base64ToImage
 		}
 
 		private void pbOut_BackgroundImageChanged(object sender, EventArgs e)
+		{
+			ValidateControls();
+		}
+
+		private void txtFileUrl_TextChanged(object sender, EventArgs e)
 		{
 			ValidateControls();
 		}

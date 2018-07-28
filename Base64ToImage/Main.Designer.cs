@@ -63,7 +63,7 @@
 			this.btnClearImage.Name = "btnClearImage";
 			this.btnClearImage.Size = new System.Drawing.Size(270, 23);
 			this.btnClearImage.TabIndex = 1;
-			this.btnClearImage.Text = "Clear";
+			this.btnClearImage.Text = "Clear Image";
 			this.btnClearImage.UseVisualStyleBackColor = true;
 			this.btnClearImage.Click += new System.EventHandler(this.btnClearImage_Click);
 			// 
@@ -96,7 +96,7 @@
 			this.btnClearText.Name = "btnClearText";
 			this.btnClearText.Size = new System.Drawing.Size(266, 23);
 			this.btnClearText.TabIndex = 4;
-			this.btnClearText.Text = "Clear";
+			this.btnClearText.Text = "Clear Text";
 			this.btnClearText.UseVisualStyleBackColor = true;
 			this.btnClearText.Click += new System.EventHandler(this.btnClearText_Click);
 			// 
@@ -130,6 +130,7 @@
 			this.txtFileUrl.Name = "txtFileUrl";
 			this.txtFileUrl.Size = new System.Drawing.Size(189, 20);
 			this.txtFileUrl.TabIndex = 7;
+			this.txtFileUrl.TextChanged += new System.EventHandler(this.txtFileUrl_TextChanged);
 			// 
 			// pnlConatiner
 			// 
